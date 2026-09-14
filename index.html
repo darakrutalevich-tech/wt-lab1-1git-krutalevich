@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как я провела лето</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .line {
+            width: 60px;
+            height: 3px;
+            background: #ff9a9e;
+            margin-bottom: 50px;
+            border-radius: 2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+            justify-items: center;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #000;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img,
+        .card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover img,
+        .card:hover video {
+            transform: scale(1.05);
+        }
+
+        .video-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+            z-index: 3;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 3;
+        }
+
+        .card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .caption h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .caption p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Моё лето</h1>
+    <div class="line"></div>
+
+    <div class="gallery">
+
+        <div class="card">
+            <img src="video&photo/city.jpg" alt="МоскваСити">
+            <div class="caption">
+                <h2>Москва Сити</h2>
+                <p>Солнце, Дори и небоскреб</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="video&photo/gp.jpg" alt="Гендерпати">
+            <div class="caption">
+                <h2>Гендер Пати</h2>
+                <p>Мальчик и я угадала</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="video&photo/spiderman.jpg" alt="Чикпук">
+            <div class="caption">
+                <h2>Удача в автомате</h2>
+                <p>Выиграли человека паука</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="video-badge">▶ ВИДЕО</span>
+            <video src="video&photo/amuspark.MOV" muted loop playsinline onmouseover="this.play()"
+                onmouseout="this.pause(); this.currentTime = 0;">
+            </video>
+            <div class="caption">
+                <h2>Парк аттракционов</h2>
+                <p>Поездка в Гомель</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="video-badge">▶ ВИДЕО</span>
+            <video src="video&photo/dance.MP4" muted loop playsinline onmouseover="this.play()"
+                onmouseout="this.pause(); this.currentTime = 0;">
+            </video>
+            <div class="caption">
+                <h2>Танцы</h2>
+                <p>Тик ток тренды</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="video-badge">▶ ВИДЕО</span>
+            <video src="video&photo/Mog.MOV" muted loop playsinline onmouseover="this.play()"
+                onmouseout="this.pause(); this.currentTime = 0;">
+            </video>
+            <div class="caption">
+                <h2>Fever</h2>
+                <p>Встреча с друзьями</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; Лето 2026
+    </footer>
+
+</body>
+
+</html>
